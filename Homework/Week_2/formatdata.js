@@ -379,17 +379,24 @@ for (var i = 0, l = dates.length; i < l; i++) {
 	// Create a string that seperates the date as follows: (2017,0,01)
 	var index = dates[i].indexOf(",");
 	var year = dates[i].substr(0, 4);
+
+	// Months start at 0 in the Date object
 	var month = dates[i].substr(4,2);
+	month = month - 1;
+
 	var day = dates[i].substr(6,2);
 	var dateformat = year + "," + month + "," + day;
 
 	// Seperate the temperature from the date
-	var temp = dates[i].substr(index + 1);
+	var temperature = dates[i].substr(index + 1);
 
 	// Format the string in such a way that CanvasJS will succesfully read it (JavaScript Date function)
-	var coordinates = "{x: new Date(" + dateformat + "), y:" + temp + "}";
+	var coordinates = "{x: new Date(" + dateformat + "), y:" + temperature + "}";
 
 	// Append the string to the array
 	cordlist.push(coordinates);
 }
+
 console.log(cordlist)
+
+
