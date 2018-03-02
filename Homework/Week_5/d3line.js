@@ -1,5 +1,6 @@
 // David van Schie, 10800999
 
+function line(){
 httpGetAsync("https://raw.githubusercontent.com/davidvschie/data_processing/master/Homework/Week_5/data.json",function(data){
 	var parsed = JSON.parse(data);
 
@@ -19,4 +20,5 @@ function httpGetAsync(URL, callback)
     }
     xmlHttp.open("GET", URL, true);
     xmlHttp.send(null);
+}
 }
